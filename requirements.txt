@@ -279,3 +279,4 @@ yapf==0.30.0
 zict==1.0.0
 zipp==2.2.0
 zope.interface==5.1.0
+gunicorn==19.9.0
