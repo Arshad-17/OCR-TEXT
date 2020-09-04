@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,redirect 
 import os
 app = Flask(__name__,template_folder='template')
-app.config["IMAGE_UPLOADS"] = r"C:\Users\arsha"
+app.config["IMAGE_UPLOADS"] = r"\image"
 @app.route('/')
 def index():
     return render_template('OCRindex.html')
@@ -15,7 +15,7 @@ def convert():
             from PIL import Image
             a= image.filename
             img = Image.open(a)
-            pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+            pytesseract.pytesseract.tesseract_cmd = r'/app/.apt/usr/bin/tesseract'
             t = pytesseract.image_to_string(img)
             return t            
 if __name__=='__main__':
